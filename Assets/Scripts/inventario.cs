@@ -26,7 +26,7 @@ public class inventario : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Item")
         {
             
             for (int i = 0; i < mochila.Count; i++)
@@ -58,20 +58,43 @@ public class inventario : MonoBehaviour
     }
 
     public GameObject menuCelular;
+    public GameObject selector1;
+    public GameObject selector2;
 
     public void funcionCelular()
     {
         if (menuCelular.activeSelf == false && mochila[id].gameObject.name == "Celular" && Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("activando");
             menuCelular.SetActive(true);
+            selector1.SetActive(true);
         }
         else if (menuCelular.activeSelf == true && Input.GetKeyDown(KeyCode.Q))
         {
             menuCelular.SetActive(false);
         }
+        else if (menuCelular.activeSelf == true && selector1.activeSelf == true && Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            selector1.SetActive(false);
+            selector2.SetActive(true);
+        }
+        else if (menuCelular.activeSelf == true && selector2.activeSelf == true && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            selector2.SetActive(false);
+            selector1.SetActive(true);
+        }
+        else if (menuCelular.activeSelf == true && selector1.activeSelf == true && Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Llamando a emergencias");
+        }
+        else if (menuCelular.activeSelf == true && selector2.activeSelf == true && Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Llamando a pariente");
+        }
+
         if (buscarI("Celular") != id)
         {
+            selector1.SetActive(false);
+            selector2.SetActive(false);
             menuCelular.SetActive(false);
         }
     }
