@@ -10,7 +10,8 @@ public class personaje : MonoBehaviour
     public float dirY;
 
     // Update is called once per frame
-    void Update()
+
+      void Update()
     {
         dirX = Input.GetAxis("Horizontal");
         dirY = Input.GetAxis("Vertical");
