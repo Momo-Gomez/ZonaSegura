@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class personaje : MonoBehaviour
 {
-    
-    public float speedY = 0.02f;
-    public float speedX = 0.02f;
+
+    public float speed = 0.004f;
     public float dirX;
     public float dirY;
     public bool estado = false;
@@ -20,7 +19,7 @@ public class personaje : MonoBehaviour
         if (estado){
             dirX = Input.GetAxis("Horizontal");
             dirY = Input.GetAxis("Vertical");
-            transform.position += new Vector3(dirX * speedX, dirY * speedY, 0);
+            transform.position += new Vector3(dirX * speed, dirY * speed, 0);
         }
         
     }
