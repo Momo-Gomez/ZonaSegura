@@ -1156,6 +1156,8 @@ MonoBehaviour:
   speedX: 0.02
   dirX: 0
   dirY: 0
+  estado: 0
+  tutorial: {fileID: 1728263167}
 --- !u!212 &269755367
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8976,6 +8978,7 @@ MonoBehaviour:
   tutorial:
   - {fileID: 2096834369}
   - {fileID: 267239274}
+  tuto: {fileID: 1728263167}
 --- !u!1 &1758031465
 GameObject:
   m_ObjectHideFlags: 0
