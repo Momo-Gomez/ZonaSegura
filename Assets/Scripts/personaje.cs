@@ -9,15 +9,8 @@ public class personaje : MonoBehaviour
     public float speedX = 0.02f;
     public float dirX;
     public float dirY;
-    public bool estado;
-
     // Update is called once per frame
-    void OnCollisionEnter2D(Collision2D collision){
-        Debug.Log ("Obstaculo");
-
-    } 
-        
-      void Update()
+    void Update()
     {
         dirX = Input.GetAxis("Horizontal");
         dirY = Input.GetAxis("Vertical");
