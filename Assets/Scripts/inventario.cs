@@ -7,7 +7,8 @@ public class inventario : MonoBehaviour
 {
 
     public List<GameObject> mochila = new List<GameObject>();
-
+    public GameObject emergencias;
+    public GameObject familia;
     private int buscarI(string item)
     {
         for (int i = 0; i < mochila.Count; i++)
@@ -84,11 +85,11 @@ public class inventario : MonoBehaviour
         }
         else if (menuCelular.activeSelf == true && selector1.activeSelf == true && Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("Llamando a emergencias");
+            emergencias.SetActive(true);
         }
         else if (menuCelular.activeSelf == true && selector2.activeSelf == true && Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("Llamando a pariente");
+            familia.SetActive(true);
         }
 
         if (buscarI("Celular") != id)
