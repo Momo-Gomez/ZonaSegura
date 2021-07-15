@@ -9,7 +9,7 @@ public class inventario : MonoBehaviour
     public List<GameObject> mochila = new List<GameObject>();
     public GameObject emergencias;
     public GameObject familia;
-    private int buscarI(string item)
+    public int buscarI(string item)
     {
         for (int i = 0; i < mochila.Count; i++)
         {
